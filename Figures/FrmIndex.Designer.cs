@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +70,8 @@
             this.romboToolStripMenuItem1,
             this.pentagonoToolStripMenuItem,
             this.romboideToolStripMenuItem,
-            this.trapezoideToolStripMenuItem});
+            this.trapezoideToolStripMenuItem,
+            this.panalToolStripMenuItem});
             this.romboToolStripMenuItem.Name = "romboToolStripMenuItem";
             this.romboToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.romboToolStripMenuItem.Text = "Figuras";
@@ -194,6 +196,13 @@
             this.label1.Text = "Universidad de las Fuerzas\r\nArmadas ESPE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // panalToolStripMenuItem
+            // 
+            this.panalToolStripMenuItem.Name = "panalToolStripMenuItem";
+            this.panalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.panalToolStripMenuItem.Text = "Panal";
+            this.panalToolStripMenuItem.Click += new System.EventHandler(this.panalToolStripMenuItem_Click);
+            // 
             // FrmIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem pentagonoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem romboideToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trapezoideToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem panalToolStripMenuItem;
     }
 }

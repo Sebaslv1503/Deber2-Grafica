@@ -26,7 +26,8 @@ namespace Figures
             ObjHexagono.PerimeterHexagono();
             ObjHexagono.AreaHexagono();
             ObjHexagono.PrintData(txtPerimetro, txtArea);
-            ObjHexagono.PlotShape(picCanvas);
+            //ObjHexagono.PlotShape(picCanvas);
+            ObjHexagono.GenerarPanal(picCanvas);
         }
 
         private void btnResetear_Click(object sender, EventArgs e)

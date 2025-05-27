@@ -14,7 +14,7 @@ namespace Figures
         private float mPerimetro;
         private float mArea;
         private Graphics mGraph;
-        private const float SF = 20; // Factor de escala
+        private const float SF = 20; 
         private Pen mPen;
 
         public Hexagono()
@@ -52,6 +52,51 @@ namespace Figures
         {
             mArea = (3 * (float)Math.Sqrt(3) / 2) * mRadio * mRadio;
         }
+        
+        public void GenerarPanal(PictureBox picCanvas)
+        {
+            if (mRadio <= 0) return;
+
+            picCanvas.Refresh();
+            mGraph = picCanvas.CreateGraphics();
+
+            float radio = mRadio * SF;
+            float lado = radio;
+
+            float dx = lado * 3f; 
+            float dy = (float)(Math.Sqrt(3) * lado);
+
+            int cols = (int)(picCanvas.Width / (1.5f * lado)) + 2;
+            int rows = (int)(picCanvas.Height / dy) + 2;
+
+            SolidBrush brush = new SolidBrush(Color.Yellow);
+            Pen pen = new Pen(Color.OrangeRed, 2);
+
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    float offsetX = (col * 1.5f * lado);
+                    float offsetY = row * dy + ((col % 2 == 1) ? dy / 2 : 0);
+
+                    PointF[] hexPoints = new PointF[6];
+                    for (int i = 0; i < 6; i++)
+                    {
+                        float angle = (float)(Math.PI / 3 * i); 
+                        float x = offsetX + radio * (float)Math.Cos(angle);
+                        float y = offsetY + radio * (float)Math.Sin(angle);
+                        hexPoints[i] = new PointF(x, y);
+                    }
+
+                    mGraph.FillPolygon(brush, hexPoints);
+                    mGraph.DrawPolygon(pen, hexPoints);
+                }
+            }
+
+            brush.Dispose();
+            pen.Dispose();
+        }
+        
 
         public void PrintData(TextBox txtPerimetro, TextBox txtArea)
         {

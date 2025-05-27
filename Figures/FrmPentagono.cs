@@ -31,7 +31,7 @@ namespace Figures
             ObjPentagono.PerimeterPentagono();
             ObjPentagono.AreaPentagono();
             ObjPentagono.PrintData(txtPerimetro, txtArea);
-            ObjPentagono.PlotShape(picCanvas);
+            //ObjPentagono.GenerarPanal(picCanvas);
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {

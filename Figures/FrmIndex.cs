@@ -169,6 +169,12 @@ namespace Figures
             OpenForm(new FrmTrapezoide());
             this.Text = "Trapezoide";
         }
+
+        private void panalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new FrmHexagono());
+            this.Text = "Hexágono";
+        }
     }
 }
  
